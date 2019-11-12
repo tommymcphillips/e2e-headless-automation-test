@@ -8,7 +8,7 @@ import site.pages.ResultPage;
 import site.pages.SearchPage;
 import site.SiteContext;
 
-public class PerformSearchSteps {
+public class PromotionalCodeSteps {
 
     private SearchPage searchPage;
     private ResultPage resultPage;
@@ -20,18 +20,19 @@ public class PerformSearchSteps {
         searchPage = siteContext.getSearchPage();
     }
 
-    @When("I perform a search with {string}, {string} values")
-    public void i_perform_a_search_with(String departureDate, String returningDate) {
+    @When("I perform a search with {string}, {string}, and {string} values")
+    public void i_perform_a_search_with_promotional_code(String departureDate, String returningDate, String promotionCode) {
         searchPage.setDeparting(departureDate);
         searchPage.setReturning(returningDate);
+        searchPage.setPromotionalCode(promotionCode);
         searchPage.clickSubmitButton();
 
     }
 
-    @Then("I should see the result page with the {string}")
-    public void i_should_see_the_successful_result_page(String resultMessage) {
+    @Then("I should see the promotion result page with the {string}")
+    public void i_should_see_the_promotion_result_page(String resultMessage) {
         resultPage = siteContext.getResultPage();
-        String formattedResult = resultPage.getSearchResultContent();
+        String formattedResult = resultPage.getPromotionResultSearchMessage();
         Assert.assertEquals(formattedResult, resultMessage);
     }
 }

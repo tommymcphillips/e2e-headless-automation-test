@@ -1,29 +1,25 @@
 package test.step_definitions;
 
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import page.SearchPage;
+import site.pages.SearchPage;
+import site.SiteContext;
 
 import java.util.List;
 
 public class NavigateSearchPageSteps {
 
     private SearchPage searchPage;
-    WebDriver driver;
     private String SELECT_TEXT = "Select...";
+    private SiteContext siteContext;
 
     @Before
-    public void setup() {
-        ChromeWebDriver chromeWebDriver = ChromeWebDriver.getInstance();
-        driver = chromeWebDriver.driver;
-        searchPage = new SearchPage(driver);
+    public void getContext() {
+        siteContext = SiteContext.getInstance();
+        searchPage = siteContext.getSearchPage();
     }
 
     @Then("There should be departure and return fields on a search form")
@@ -38,6 +34,8 @@ public class NavigateSearchPageSteps {
         for (String month : months) {
             Assert.assertTrue(findOptionText(options, month));
         }
+
+        ///IS PENDGIN VALIDATE getDEPARTING
     }
 
     @And("^Only the following returning months are displayed$")
@@ -50,6 +48,13 @@ public class NavigateSearchPageSteps {
     public void only_the_following_departure_month_are_displayed(List<String> validMonths) {
         List<WebElement> options = searchPage.getReturning().getOptions();
         Assert.assertTrue(allMonthsAreValid(options, validMonths));
+    }
+
+    @Then("The {string} should appear in the Search Form")
+    public void the_text_should_appear_in_the_search_form(String contentText) {
+        Assert.assertTrue(searchPage.getFormContent().getText().contains(contentText), contentText + " Not Appears in the search form");
+
+
     }
 
     private boolean allMonthsAreValid(List<WebElement> options, List<String> validMonths) {

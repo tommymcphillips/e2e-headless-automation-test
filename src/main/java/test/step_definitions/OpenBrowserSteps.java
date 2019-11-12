@@ -2,31 +2,29 @@ package test.step_definitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import page.SearchPage;
+import site.pages.SearchPage;
+import site.SiteContext;
 
 public class OpenBrowserSteps {
 
-    private WebDriver driver;
     private SearchPage searchPage;
+    private SiteContext siteContext;
 
     @Before
-    public void setup(){
-        ChromeWebDriver chromeWebDriver = ChromeWebDriver.getInstance();
-        driver = chromeWebDriver.driver;
-        searchPage = new SearchPage(driver);
+    public void getContext(){
+        siteContext = SiteContext.getInstance();
+        searchPage = siteContext.getSearchPage();
     }
 
     @After
-    public void close() {
-        //driver.close();
-        ChromeWebDriver.killInstance();
+    public void clearSiteContext(){
+        siteContext.clearSiteContext();
     }
 
-    @When("I navigate to search Marsair page")
-    public void i_navigate_to_search_marsair_page() throws Exception {
-        SearchPage searchPage = new SearchPage(driver);
+    @Given("I navigate to search Marsair page")
+    public void i_navigate_to_search_marsair_page() {
         searchPage.getSeachPage();
     }
 }

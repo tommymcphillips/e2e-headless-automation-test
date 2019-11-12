@@ -1,28 +1,39 @@
-package page;
+package site.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class SearchPage {
+    private WebDriver driver;
+    private WebDriverWait wait;
     private WebElement departing;
     private WebElement returning;
     private WebElement promotional_code;
     @FindBy(how = How.XPATH, using = "//dl[4]/dd/input")
     private WebElement submitButton;
-    private WebDriver driver;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]")
+    private WebElement formContent;
 
-    public SearchPage(WebDriver driver){
+    private final static int THREE_SECONDS = 2000;
+
+    public SearchPage(WebDriver driver) {
         this.driver = driver;
-
+        wait = new WebDriverWait(driver, 5);
         //Initialise Elements
         PageFactory.initElements(driver, this);
     }
 
-    public void getSeachPage(){
+    public void getSeachPage() {
         driver.get("https://marsair.thoughtworks-labs.net/thomasmcphillips");
     }
 
@@ -54,22 +65,20 @@ public class SearchPage {
         return new Select(returning);
     }
 
-    public WebElement getPromotional_code() {
-        return promotional_code;
+
+    public WebElement getFormContent() {
+        return formContent;
     }
 
-    public WebElement getSubmitButton() {
-        return submitButton;
+    public String getTitle() throws InterruptedException {
+        waitRender();
+        return driver.getTitle();
     }
 
-    public WebDriver getDriver() {
-        return driver;
+    private void waitRender() throws InterruptedException {
+        Thread.sleep(THREE_SECONDS);
     }
 
-    public void closeDriver(){
-        driver.close();
-        driver = null;
-    }
 }
 
 
