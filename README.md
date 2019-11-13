@@ -28,14 +28,14 @@ Run `gradle build`in the root folder
 **Running test**
 The suite have differents ways to be executed , 
     
- 1. Scenarios can be run by tag feature:
+1. Scenarios can be run by tag feature:
  Run the feature required in root folder 
-./gradle cucumber -Dcucumber.options="--tags @smoketest"
-./gradle cucumber -Dcucumber.options="--tags @linktohomepage"
-./gradle cucumber -Dcucumber.options="--tags @basicsearch"
-./gradle cucumber -Dcucumber.options="--tags @promotionalcode"
-./gradle cucumber -Dcucumber.options="--tags @invalidreturndates"
-./gradle cucumber -Dcucumber.options="--tags @linktohomepage"
+    - `./gradle cucumber -Dcucumber.options="--tags @smoketest"`
+    - `./gradle cucumber -Dcucumber.options="--tags @linktohomepage"`
+    - `./gradle cucumber -Dcucumber.options="--tags @basicsearch"`
+    - `./gradle cucumber -Dcucumber.options="--tags @promotionalcode"`
+    - `./gradle cucumber -Dcucumber.options="--tags @invalidreturndates"`
+    - `./gradle cucumber -Dcucumber.options="--tags @linktohomepage"`
 
  2. Run all scenarios
  Run in the root folder 
