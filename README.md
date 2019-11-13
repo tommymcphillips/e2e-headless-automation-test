@@ -70,5 +70,5 @@ With Intellij, add a new Run/Debug configuration
  - **Feature:** /tw-assessment/src/main/java/test/features/ (can specify a sigle feature /PromotionalCode.feature) 
  - **Program arguments:** --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter --plugin pretty
 
-![Run Configuration](https://picasaweb.google.com/117483325776452027820/6758596976400119969#6758596983927546658 "Example")
+![Run Configuration](https://ibb.co/tDvz4WK "Example")
 
