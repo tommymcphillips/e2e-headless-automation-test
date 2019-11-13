@@ -30,12 +30,12 @@ The suite have differents ways to be executed ,
     
 1. Scenarios can be run by tag feature:
  Run the feature required in root folder 
-    - `./gradle cucumber -Dcucumber.options="--tags @smoketest"`
-    - `./gradle cucumber -Dcucumber.options="--tags @linktohomepage"`
-    - `./gradle cucumber -Dcucumber.options="--tags @basicsearch"`
-    - `./gradle cucumber -Dcucumber.options="--tags @promotionalcode"`
-    - `./gradle cucumber -Dcucumber.options="--tags @invalidreturndates"`
-    - `./gradle cucumber -Dcucumber.options="--tags @linktohomepage"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @smoketest"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @linktohomepage"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @basicsearch"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @promotionalcode"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @invalidreturndates"`
+    - `./gradlew cucumber -Dcucumber.options="--tags @linktohomepage"`
 
  2. Run all scenarios
  Run in the root folder 
@@ -45,7 +45,7 @@ The code will open a headless chrome browser and will be executed in there.
  
 ## Results
 
-Results can be observed in the console output meanwhile scenarios are being executed, after the execution of all features/scenarios a HTML report will be created in the path `/target/cucumber-html-reports`  
+Results can be observed in the console output meanwhile scenarios are being executed, after the execution of all features/scenarios a HTML report will be created in the path /target/cucumber-html-reports  
 
 
 # Suite Structure
