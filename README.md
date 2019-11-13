@@ -45,7 +45,7 @@ The code will open a headless chrome browser and will be executed in there.
  
 ## Results
 
-Results can be observed in the console output meanwhile scenarios are being executed, after the execution of all features/scenarios a HTML report will be created in the path /target/cucumber-html-reports  
+Results can be observed in the console output meanwhile scenarios are being executed, after the execution of all features/scenarios a HTML report will be created in the path ./target/cucumber-html-reports  
 
 
 # Suite Structure
