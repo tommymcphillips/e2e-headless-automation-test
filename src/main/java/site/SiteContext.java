@@ -6,8 +6,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import site.pages.ResultPage;
 import site.pages.SearchPage;
 
-import java.util.concurrent.TimeUnit;
-
 public class SiteContext {
 
     private static WebDriver driver;

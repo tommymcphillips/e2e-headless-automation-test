@@ -23,19 +23,23 @@ public class NavigateSearchPageSteps {
     }
 
     @Then("There should be departure and return fields on a search form")
-    public void there_should_be_departure_and_return_fields_on_a_search_form() throws InterruptedException {
+    public void there_should_be_departure_and_return_fields_on_a_search_form() {
         Assert.assertNotNull(searchPage.getDeparting());
         Assert.assertNotNull(searchPage.getReturning());
     }
 
     @And("^Departure and returning fields should have the following options$")
     public void depature_and_returning_fields_should_have_the_following_options(List<String> months) {
-        List<WebElement> options = searchPage.getReturning().getOptions();
+        List<WebElement> returningOptions = searchPage.getReturning().getOptions();
+        List<WebElement> departingOptions = searchPage.getDeparting().getOptions();
         for (String month : months) {
-            Assert.assertTrue(findOptionText(options, month));
+            Assert.assertTrue(findOptionText(returningOptions, month));
         }
 
-        ///IS PENDGIN VALIDATE getDEPARTING
+        for (String month : months) {
+            Assert.assertTrue(findOptionText(departingOptions, month));
+        }
+
     }
 
     @And("^Only the following returning months are displayed$")

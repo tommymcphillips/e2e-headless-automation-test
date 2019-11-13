@@ -3,9 +3,8 @@ package test.step_definitions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import site.pages.SearchPage;
 import site.SiteContext;
+import site.pages.SearchPage;
 
 public class OpenBrowserSteps {
 

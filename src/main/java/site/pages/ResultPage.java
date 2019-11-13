@@ -14,8 +14,7 @@ import java.util.List;
 public class ResultPage {
 
     private WebDriver driver;
-    private WebDriverWait wait;
-    private final static int THREE_SECONDS = 2000;
+
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]")
     private WebElement resultContent;
@@ -31,9 +30,10 @@ public class ResultPage {
     @FindBy(how = How.PARTIAL_LINK_TEXT, using = "Back")
     private WebElement backButton;
 
+    private final static int TWO_SECONDS = 2000;
+
     public ResultPage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
         //Initialise Elements
 
         PageFactory.initElements(driver, this);
@@ -60,11 +60,10 @@ public class ResultPage {
     public void clickLogoMars() throws InterruptedException {
         waitRender();
         logo.click();
-        //logo.click();
     }
 
     private void waitRender() throws InterruptedException {
-        Thread.sleep(THREE_SECONDS);
+        Thread.sleep(TWO_SECONDS);
     }
 
 
