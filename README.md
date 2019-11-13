@@ -55,11 +55,6 @@ Results can be observed in the console output meanwhile scenarios are being exec
  - **Step,** Each Feature communicates with a step, this file contains the test cases in Java, it will be executed in the same order inside the feature.
  - **Page Object**, this class will contain all the properties/actions usable of a page, that Steps uses, this class is responsible handling driver (Selenium -> Chrome).
  
-```mermaid
-graph LR
-A[Features] --> B[Step File]
-B --> c[Page Object]
-```
  
 ## Debug tests
 
