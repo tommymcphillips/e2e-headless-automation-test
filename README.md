@@ -42,6 +42,8 @@ The suite have differents ways to be executed ,
  ./gradle cucumber
 
 The code will open a headless chrome browser and will be executed in there.
+If you want to disable headless mode;
+delete arg `--headless` in the line `options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");` in the the file `./src/main/java/site/SiteContex.class`
  
 ## Results
 
