@@ -37,9 +37,18 @@ Feature: Promotional Codes
       | July      | December (two year from now)  | AF2-FJK-418       | Sorry, code AF2-FJK-418 is not valid  |
       | July      | December (two year from now)  | AF3-FJK-411       | Sorry, code AF3-FJK-411 is not valid  |
       | July      | December (two year from now)  | AF3-FJK-148       | Sorry, code AF3-FJK-148 is not valid  |
-      | July      | December (two year from now)  | AF4-FJK-419       | Sorry, code AF4-FJK-419 is not valid  |
+      | July      | December (two year from now)  | AF4-FJK-329       | Sorry, code AF4-FJK-419 is not valid  |
       | July      | December (two year from now)  | JJ5-OPQ-311       | Sorry, code JJ5-OPQ-311 is not valid  |
       | July      | December (two year from now)  | JJ6-OPQ-111       | Sorry, code JJ6-OPQ-111 is not valid  |
       | July      | December (two year from now)  | JJ1-OPQ-657       | Sorry, code JJ1-OPQ-657 is not valid  |
       | July      | December (two year from now)  | JJ9-OPQ-851       | Sorry, code JJ9-OPQ-851 is not valid  |
       | July      | December (two year from now)  | JJ10-OPQ-112      | Sorry, code JJ10-OPQ-112 is not valid |
+
+  @promotionalcode
+  Scenario Outline: Doing unavailable search with a valid <PromotionalCode> in Search Page <Departure> & <Returning>
+    Given I navigate to search Marsair page
+    When I perform a search with "<Departure>", "<Returning>", and "<PromotionalCode>" values
+    Then I should see the result page with the "<SearchContent>"
+    Examples:
+      | Departure | Returning                     | PromotionalCode   | SearchContent                              |
+      | July      | July (two year from now)      | AF1-FJK-414       | Sorry, there are no more seats available.  |

@@ -23,9 +23,10 @@ Feature: Basic Search
     When I perform a search with "<Departure>", "<Returning>" values
     Then I should see the result page with the "<SearchContent>"
     Examples:
-      | Departure | Returning                   | SearchContent |
-      | July      | December (two year from now)| Seats available! Call 0800 MARSAIR to book!|
-      | July      | July (next year)            | Sorry, there are no more seats available.  |
+      | Departure | Returning                   | SearchContent                                                    |
+      | July      | December (two year from now)| Seats available! Call 0800 MARSAIR to book!                      |
+      | July      | July (next year)            | Sorry, there are no more seats available.                        |
+      | Select... | Select...                   | Unfortunately, this schedule is not possible. Please try again.  |
   @basicsearch @invalidreturndates
    Scenario Outline: Searching for invalid trips in Search Page <Departure> & <Returning>
     Given I navigate to search Marsair page
