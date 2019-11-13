@@ -5,7 +5,7 @@ This project is an end2end suite test for MarsAir WebApp developed in POM (Page 
 
 ##  Languagues & Tools
 
- - Java
+ - Java 1.8
  - Cucumber (BDD + Gherkin)
  - Selenium (WebDriver)
  - Chrome Headless (Browser)
