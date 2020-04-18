@@ -7,6 +7,7 @@ Feature: Link to Home Page
     “Book a ticket to the red planet now!” should apperar somewhere prominent on the page.
     Clicking it takes the user to the home page.
     Clicking the MarsAir logo on the top left should also take the user to the home page.
+
   @linktohomepage
   Scenario Outline: Navigating back to Search page from Result page
     Given I navigate to search Marsair page

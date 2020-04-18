@@ -29,7 +29,7 @@ public class SearchPage {
     }
 
     public void getSeachPage() {
-        driver.get("https://marsair.thoughtworks-labs.net/thomasmcphillips");
+        driver.get("URL SEARCH PAGE");
     }
 
     public void setDeparting(String month) {

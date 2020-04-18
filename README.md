@@ -1,13 +1,14 @@
-# TW Assessment Automated Test Suit
+# Automated Test Suit
 
 ## BDD tests automated in Java 
-This project is an end2end suite test for MarsAir WebApp developed in POM (Page object model) 
+This project is an example of end2end suite test developed in POM (Page object model) for a WebApp  
 
 ##  Languagues & Tools
 
  - Java 1.8
  - Cucumber (BDD + Gherkin)
  - Selenium (WebDriver)
+ - Selenium PageFactory
  - Chrome Headless (Browser)
  - Gradle (Build Tool)
 
