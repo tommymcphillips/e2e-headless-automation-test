@@ -65,7 +65,7 @@ With Intellij, add a new Run/Debug configuration
 
  - **Main:** io.cucumber.core.cli.Main
  - **Glue:** test.step_definitions
- - **Feature:** /tw-assessment/src/main/java/test/features/ (can specify a sigle feature /PromotionalCode.feature) 
+ - **Feature:** /e2e-automation-test/src/main/java/test/features/ (can specify a sigle feature /PromotionalCode.feature) 
  - **Program arguments:** --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter --plugin pretty
 
 
